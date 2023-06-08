@@ -1,0 +1,21 @@
+	<!--script del mapa de GOOGLE MAPS-->
+
+	  <script>
+        var map;
+        function initMap() 
+		  {
+            map = new google.maps.Map
+			  (
+			    document.getElementById('map'), 
+				  {
+                    center: {lat:19.435205, lng: -99.1438837},
+                    zoom: 17
+                  } 
+			  );
+          }
+      </script>
+              
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjoa4lP93mkrBZ1yLdAaZHjD5vRVyUSLU&callback=initMap"
+              async defer></script>
+	  
+	<!--/script del mapa de GOOGLE MAPS-->

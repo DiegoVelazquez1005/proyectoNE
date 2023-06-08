@@ -1,0 +1,63 @@
+*{
+  font-family: Century Gothic;
+}
+.btn {
+  padding: 10px 20px;
+  background-color: #002b5c;
+  color: #f1f1f1;
+  border-radius: 0;
+  transition: 0.2s;
+}
+
+.btn:hover,
+.btn:focus {
+  border: 0px solid transparent;
+  background-color: #555;
+  color: #f1f1f1;
+  padding: 10px 20px;
+  border: none;
+}
+#myBtn {
+	display: none;
+      position: fixed;
+			bottom: 2%;
+			right: 45%;
+			/*z-index: 99;*/
+			border: none;
+			outline: none;
+			background-color:  transparent;
+			color: white;
+			cursor: pointer;
+			padding: 15px 30px;
+			border-radius: 10px;
+			text-align:center;
+}
+/*#myBtn {
+  position: fixed;
+  left: 510px;
+  display: none;
+  bottom: 30px;
+  border: none;
+  background-color: transparent;
+}*/
+
+#myBtn:hover {
+  background-color: transparent;
+  border: none;
+}
+#top {
+  color: #777;
+  letter-spacing: 10px;
+  font-size: 10px;
+  border: none;
+}
+#top:hover {
+  color: white;
+  letter-spacing: 10px;
+  border: none;
+}
+@media screen and (max-width: 500px) {
+  #top {
+    display: none;
+  }
+}

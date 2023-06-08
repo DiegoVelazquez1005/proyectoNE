@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=[240px]" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale-1.0, maximum-scale-1.0, minimum-scale-1.0,"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link rel="icon" type="image/png" href="imagenes/schoolLogo.png" />
+    <link rel="stylesheet" href="css2/modalStyle.css" />
+    <link rel="stylesheet" type="text/css" href="css2/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="css2/carrusel.css" />
+    <link rel="stylesheet" type="text/css" href="css2/boton.css" />
+    <link rel="stylesheet" type="text/css" href="css2/barradenav.css" />
+    <link rel="stylesheet" type="text/css" href="css2/footer.css" />
+    <link rel="stylesheet" type="text/css" href="css2/parallax.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>Colegio CDMX Primaria</title>
+
+    <script>
+      //Contola la candidad de pixeles a los que aparecera el boton
+      window.onscroll = function () {
+        scrollFunction();
+      };
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 500 ||
+          document.documentElement.scrollTop > 500
+        ) {
+          document.getElementById("myBtn").style.display = "block";
+        } else {
+          document.getElementById("myBtn").style.display = "none";
+        }
+      }
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+  </head>
+  <body style="background-color: white">
+    <div class="contenedor">
+      <!--barra de navegacion-->
+      <nav class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#barra-1"
+            >
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <img
+              height="50px"
+              style="margin-top: 5px"
+              src="imagenes/schoolLogo.png"
+            />
+          </div>
+          <div class="collapse navbar-collapse" id="barra-1">
+            <ul id="lin" class="nav navbar-nav">
+              <li>
+                <a href="index.html">
+                  <span class="glyphicon glyphicon-home"></span>
+                  Inicio
+                </a>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                  <span class="glyphicon glyphicon-book"></span>
+                  Grado Ecolar
+                  <span class="caret"></span>
+                </a>
+                <ul id="cursos" class="dropdown-menu dropdown-content">
+                  <li><a href="primaria.html" target="_blank">Primaria</a></li>
+                  <li>
+                    <a href="secundaria.html" target="_blank">Secundaria</a>
+                  </li>
+                  <li>
+                    <a href="preparatoria.html" target="_blank">Preparatoria</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="send">
+                <a data-toggle="modal" data-target="#myModal">
+                  <span class="glyphicon glyphicon-send">
+                    <span class="cont">Contacto</span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <!--cabecera del modal-->
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+              <br />
+              <h3 style="text-align: center; color: white">Contacto</h3>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <!--GOOGLE MAPS-->
+                <div class="col-4">
+                  <iframe
+                    id="map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.4721481284696!2d-99.14338868662429!3d19.435199986882797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92b75aa014d%3A0x17d810d20da6e8cf!2sPalacio+de+Bellas+Artes!5e0!3m2!1ses-419!2smx!4v1497389778659"
+                    width="100%"
+                    height="400px"
+                    frameborder="0"
+                    style="border: 0"
+                    allowfullscreen
+                  >
+                  </iframe>
+                </div>
+                <!--/GOOGLE MAPS-->
+                <!--Formulario-->
+                <div class="col-8 col-s">
+                  <h3 class="text-center">¿Dudas?</h3>
+                  <div class="col-6">
+                    <p>Donde nos puedes encontar:</p>
+                  </div>
+                  <!--Datos-->
+                  <div class="col-6 col-s">
+                    <p>
+                      <span class="glyphicon glyphicon-map-marker"></span>
+                      CDMX
+                    </p>
+                    <br />
+                    <p>
+                      <span class="glyphicon glyphicon-phone"></span>
+                      TELEFONO: 5568939156
+                    </p>
+                    <br />
+                    <p>
+                      <span class="glyphicon glyphicon-envelope"></span>
+                      Email: colegiocdmx@gmail.com
+                    </p>
+                  </div>
+                  <br />
+                  <!--Cuadros de texto-->
+                  <p>Contactanos para resolver tus dudas con algun tema</p>
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-6 form-group">
+                        <label for="name">Nombre:</label>
+                        <input
+                          class="form-control"
+                          id="name"
+                          name="nombre"
+                          placeholder="nombre"
+                          type="text"
+                          required
+                        />
+                      </div>
+                      <div class="col-6 form-group">
+                        <label for="email">Correo: </label>
+                        <input
+                          class="form-control"
+                          id="email"
+                          name="email"
+                          placeholder="Email"
+                          type="email"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <label for="commentario">Comentarios: </label>
+                    <textarea
+                      class="form-control"
+                      id="comments"
+                      name="commentario"
+                      placeholder="Commentario"
+                      rows="5"
+                    >
+                    </textarea>
+                    <br />
+                    <div class="row">
+                      <div class="col-12 form-group">
+                        <button class="btn pull-right" type="submit">
+                          enviar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--/Formulario-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/Modal-->
+      <br /><br />
+      <!--Contenido-->
+      <!--Primaria-->
+      <div width="100%" class="texto">
+        <div style="background-color: #0364d3; color: #ffffff; height: 100%">
+          <br />
+          <h1>Primaria</h1>
+          <br />
+        </div>
+      </div>
+      <!--plan de estudios-->
+      <div width="100%" class="texto">
+        <div style="background-color: #ffffff; color: #002b5c; height: 100%">
+          <br />
+          <h1>Plan de estudios</h1>
+          <br />
+          <p>
+            Nuestro plan de estudios de primaria se basa en un enfoque integral
+            que abarca asignaturas fundamentales como matemáticas, lenguaje,
+            ciencias y estudios sociales. Además, ofrecemos actividades
+            prácticas, arte, música y educación física para promover un
+            aprendizaje holístico". Instalaciones: "Contamos con aulas luminosas
+            y espaciosas, diseñadas especialmente para fomentar un entorno de
+            aprendizaje estimulante. Nuestras instalaciones incluyen una
+            biblioteca repleta de libros fascinantes, un patio de recreo
+            equipado con juegos seguros y áreas verdes para que los niños
+            exploren y jueguen
+          </p>
+          <br />
+        </div>
+      </div>
+
+      <!--actividades-->
+      <div width="100%" class="texto">
+        <div style="background-color: #002b5c; color: white; height: 100%">
+          <br />
+          <h1>Actividades extracurriculares</h1>
+          <br />
+          <p>
+            Además de nuestra educación académica sólida, ofrecemos una variedad
+            de actividades extracurriculares emocionantes para enriquecer la
+            experiencia de aprendizaje de los alumnos de primaria. Desde clubes
+            de arte y música hasta deportes y actividades al aire libre, hay
+            algo para cada interés
+          </p>
+          <br />
+        </div>
+      </div>
+      <!--docentes-->
+      <div width="100%" class="texto">
+        <div style="background-color: white; color: #002b5c; height: 100%">
+          <br />
+          <h1>Cuerpo docente</h1>
+          <br />
+          <p>
+            Nuestro equipo de maestros altamente capacitados y apasionados está
+            comprometido con el éxito de cada alumno. Nos enorgullece contar con
+            educadores dedicados que crean un ambiente de apoyo y promueven un
+            aprendizaje interactivo y estimulante
+          </p>
+          <br />
+        </div>
+      </div>
+      <!--/Contenido-->
+    </div>
+  </body>
+  <!--footer-->
+  <footer>
+    <div class="row content">
+      <div class="col-2 col-m-12 sidenav" align="left">
+        <br />
+        <div id="ftstl" style="text-align: center">
+          <p>Grado Escolar</p>
+          <br />
+          <p>Primaria</p>
+          <br />
+          <p>Secundaria</p>
+          <br />
+          <p>Preparatoria</p>
+        </div>
+      </div>
+      <div class="col-8 col-m-12 sidenav" align="center">
+        <br /><br />
+        <p>Donde nos puedes encontar;</p>
+        <br />
+        <p>
+          <span class="glyphicon glyphicon-map-marker">CDMX</span>
+        </p>
+        <p>
+          <span class="glyphicon glyphicon-phone">TELEFONO: 5568939156</span>
+        </p>
+        <p>
+          <span class="glyphicon glyphicon-envelope">
+            Email: colegiocdmx@gmail.com
+          </span>
+        </p>
+      </div>
+      <div class="col-2 col-m-12sidenav" align="right">
+        <div align="center">
+          <p>Siguenos en:</p>
+          <br />
+          <a href="https://es-la.facebook.com/">
+            <img
+              src="socialicon/icons/256/Facebook.png"
+              class="img-rounded"
+              width="50px"
+              height="50px"
+              style="margin: auto"
+            />
+          </a>
+          <br /><br />
+          <a href="https://twitter.com/?lang=es">
+            <img
+              src="socialicon/icons/256/Twitter.png"
+              class="img-rounded"
+              width="50px"
+              height="50px"
+              style="margin: auto"
+            />
+          </a>
+          <br /><br />
+          <a href="https://www.instagram.com/?hl=es">
+            <img
+              src="socialicon/icons/256/Instagram.png"
+              class="img-rounded"
+              width="50px"
+              height="50px"
+              style="margin: auto"
+            />
+          </a>
+        </div>
+      </div>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <span class="glyphicon glyphicon-chevron-up" id="top">
+          <p>Top</p>
+        </span>
+      </button>
+    </div>
+  </footer>
+
+  <!--/footer-->
+</html>
+<!--
+  
+-->

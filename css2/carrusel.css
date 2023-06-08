@@ -1,0 +1,43 @@
+.person {
+  border: 10px solid transparent;
+  margin-bottom: 25px;
+  width: 80%;
+  height: 80%;
+  opacity: 0.9;
+}
+
+.person:hover {
+  border-color: #f1f1f1;
+}
+
+.carousel-inner img {
+  width: 100%;
+  /*margin: auto;*/
+}
+
+.carousel-caption h3 {
+  color: #fff !important;
+  margin-bottom: auto;
+  width: auto;
+  height: auto;
+}
+.carousel-caption{
+  width: 30%; 
+  background-color: #002b5c; 
+  opacity: 0.9
+}
+#img_carrousel {
+  width: 100%;
+  height: 500px;
+}
+
+@media (max-width: 700px) {
+  .carousel-caption {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  #img_carrousel {
+    height: 200px;
+  }
+}
