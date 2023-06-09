@@ -25,3 +25,8 @@ footer a:hover {
 textarea {
   resize: none;
 }
+
+.no-bullets {
+  list-style-type: none;
+  padding: 0;
+}

@@ -1,5 +1,3 @@
-<script>
-  function Perro () {
-    alert( id="mensaje-agradecimiento");
-  }
-</script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('last-modified').innerHTML = document.lastModified;
+});
