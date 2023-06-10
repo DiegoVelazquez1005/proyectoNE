@@ -296,49 +296,67 @@
           </div>
           <br><br>			  
           <div class="row">	
-            <div class="col-1 col-m-1 col-s inutil">
-            </div>
-            <div class="col-5 col-m-5 col-s">
+            <div class="col-4 col-m-4 col-s">
               <div align="center">
                 <div class="card" align="center" width="100%">
-                  <img id="esq" width="100%" height="250px" src="imagenes/avatar.png" alt="Avatar"></img>
+                <a href="#" onclick= "mostrarPersona('imagenes/Diego.jpeg', '&quot;Como CEO de nuestra escuela, mi objetivo es liderar un equipo dedicado a formar líderes innovadores en todos los niveles educativos, fomentando valores éticos, investigación, aprendizaje y servicio a la comunidad.&quot; - Diego Velázquez')">
+                  <img id="esq" width="80%" height="250px" src="imagenes/Diego.jpeg" alt="Avatar1"></img></a>
                   <div style="padding:25px">        
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                      Praesent ac tincidunt nulla, ac faucibus libero. Cras 
-                      lectus ante, ornare nec ex eu, vehicula mattis velit. 
-                      Donec convallis ultricies justo a posuere. Vivamus 
-                      condimentum quam eu malesuada bibendum. Pellentesque 
-                      finibus sem id aliquam viverra. Orci varius natoque 
-                      penatibus et magnis dis parturient montes, nascetur 
-                      ridiculus mus. Proin nisi lorem, interdum in commodo nec,
-                      consectetur in odio.
+                      CEO (Director Ejecutivo)
                     </p>
                   </div>
                 </div>
               </div>
             </div>             
-            <div class="col-5 col-m-5 col-s">
+            <div class="col-4 col-m-4 col-s">
               <div align="center">
                 <div class="card" align="center">
-                  <img id="esq" width="100%" height="250px" src="imagenes/avatar.png" alt="Avatar"></img>
+                  <a href="#" onclick= "mostrarPersona('imagenes/Sergio.jpeg', '&quot;Como CTO de nuestra escuela, mi enfoque es impulsar la innovación tecnológica en todos los niveles educativos, proporcionando herramientas y soluciones tecnológicas que respalden la investigación, el aprendizaje y el servicio a la comunidad, en línea con nuestra visión de ser líderes a nivel nacional.&quot; - Sergio Guzmán')">
+                  <img id="esq" width="80%" height="250px" src="imagenes/Sergio.jpeg" alt="Avatar2"></img></a>
                   <div style="padding:25px" >        
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                      Praesent ac tincidunt nulla, ac faucibus libero. Cras 
-                      lectus ante, ornare nec ex eu, vehicula mattis velit. 
-                      Donec convallis ultricies justo a posuere. Vivamus 
-                      condimentum quam eu malesuada bibendum. Pellentesque 
-                      finibus sem id aliquam viverra. Orci varius natoque 
-                      penatibus et magnis dis parturient montes, nascetur 
-                      ridiculus mus. Proin nisi lorem, interdum in commodo nec,
-                      consectetur in odio.
+                      CTO (Director de Tecnología)
                     </p>
                   </div>
                 </div>
               </div>
             </div> 
-            <div class="col-1 col-m-1 col-s inutil">
+            <div class="col-4 col-m-4 col-s">
+              <div align="center">
+                <div class="card" align="center">
+                  <a href="#" onclick= "mostrarPersona('imagenes/Eduardo.jpeg', '&quot;Como CFO de nuestra escuela, mi responsabilidad es garantizar una gestión financiera sólida y sostenible, brindando los recursos necesarios para cumplir nuestra misión de educar líderes innovadores y contribuir al crecimiento de la sociedad.&quot; - Eduardo Tapia')">
+                  <img id="esq" width="80%" height="250px" src="imagenes/Eduardo.jpeg" alt="Avatar3"></img></a>
+                  <div style="padding:25px" >        
+                    <p>
+                      CFO (Director Financiero)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+                <!-- Ventana emergente -->
+            <div id="ventanaPersona" class="modal fade" tabindex="-1" role="dialog" aria-hidden="false">
+              div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-6 col-m-6 col-s">
+                        <img id="ventanaImagen" src="" alt="Imagen" style="width: 100%;">
+                      </div>
+                      <div class="col-6 col-m-6 col-s">
+                        <p id="ventanaTexto"></p>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <div class<="col-1 col-m-1 col-s inutil">
             </div>
           </div>
         </div>
