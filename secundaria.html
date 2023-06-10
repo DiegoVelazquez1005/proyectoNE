@@ -26,6 +26,8 @@
 
     <title>Colegio CDMX Secundaria</title>
 
+    <script src="script.js"></script>
+
     <script>
       //Contola la candidad de pixeles a los que aparecera el boton
       window.onscroll = function () {
@@ -280,17 +282,17 @@
       <div class="col-2 col-m-12 sidenav" align="left">
         <br />
         <div id="ftstl" style="text-align: center">
-          <p>Grado Escolar</p>
-          <br />
-          <p>Primaria</p>
-          <br />
-          <p>Secundaria</p>
-          <br />
-          <p>Preparatoria</p>
+            <p class="ultima-actualizacion">Última actualización: <span id="last-modified"></span></p>
+            <p class="creadores">Creadores:</p>
+            <ul class="no-bullets">
+              <li class="creadores">Velázquez R., Diego</li>
+              <li class="creadores">Guzmán M., Sergio </li>
+              <li class="creadores">Tapia S., Eduardo </li>
+            </ul>
         </div>
       </div>
       <div class="col-8 col-m-12 sidenav" align="center">
-        <br /><br />
+        <br />
         <p>Donde nos puedes encontar;</p>
         <br />
         <p>
@@ -308,13 +310,12 @@
       <div class="col-2 col-m-12sidenav" align="right">
         <div align="center">
           <p>Siguenos en:</p>
-          <br />
           <a href="https://es-la.facebook.com/">
             <img
               src="socialicon/icons/256/Facebook.png"
               class="img-rounded"
-              width="50px"
-              height="50px"
+              width="40px"
+              height="40px"
               style="margin: auto"
             />
           </a>
@@ -323,8 +324,8 @@
             <img
               src="socialicon/icons/256/Twitter.png"
               class="img-rounded"
-              width="50px"
-              height="50px"
+              width="40px"
+              height="40px"
               style="margin: auto"
             />
           </a>
@@ -333,8 +334,8 @@
             <img
               src="socialicon/icons/256/Instagram.png"
               class="img-rounded"
-              width="50px"
-              height="50px"
+              width="40px"
+              height="40px"
               style="margin: auto"
             />
           </a>
@@ -342,7 +343,7 @@
       </div>
       <button onclick="topFunction()" id="myBtn" title="Go to top">
         <span class="glyphicon glyphicon-chevron-up" id="top">
-          <p>Top</p>
+          <p id="topText" style="color: black;" >Top</p>
         </span>
       </button>
     </div>
