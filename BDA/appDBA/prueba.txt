@@ -1,0 +1,34 @@
+<?php
+// Configuración de conexión a Oracle
+$host = "localhost";
+$port = "1521";
+$sid = "XE";
+$username = "SYSTEM";
+$password = "Mi4353fe";
+// Establecer la conexión a la base de datos
+$conn = oci_connect($username, $password, "$host:$port/$sid");
+if (!$conn) {
+    $e = oci_error();
+    trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+}
+
+// Consulta para obtener todos los registros
+$query = "SELECT * FROM USUARIO";
+$stmt = oci_parse($conn, $query);
+oci_execute($stmt);
+
+// Mostrar los resultados
+while ($row = oci_fetch_assoc($stmt)) {
+    echo "ID de usuario: " . $row['IDUSUARIO'] . "<br>";
+    echo "Nombre: " . $row['NOMBRE'] . "<br>";
+    echo "Apellido paterno: " . $row['APPATERNO'] . "<br>";
+    echo "Apellido materno: " . $row['APMATERNO'] . "<br>";
+    echo "Contraseña: " . $row['CONTRASENA'] . "<br>";
+    echo "Correo: " . $row['CORREO'] . "<br>";
+    echo "<br>";
+}
+
+// Cerrar la conexión a la base de datos
+oci_free_statement($stmt);
+oci_close($conn);
+?>
