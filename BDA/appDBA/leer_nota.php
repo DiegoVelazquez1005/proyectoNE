@@ -2,17 +2,6 @@
 <head></head>
 <body>
 
-
-<table width="70%" border="1" >  
-	<tr>
-        <th id="target">Id nota</th>
-        <th id="target">titulo</th>
-        <th id="target">fecha de creacion</th>
-        <th id="target">Id usuario</th>
-        <th id="target" >Id categoria</th>
-        <th id="target">Contenido</th>
-		<th id="target">Contenido blob</th>
-	</tr>
 <?php
 $host = "localhost";
 $port = "1521";
@@ -27,127 +16,102 @@ if (!$conn) {
     $e = oci_error();
     trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
 }
-
-	$sql="SELECT IDNOTA, TITULO, FECHACREACION, IDUSUARIO, IDCATEGORIA, CONTENIDO, 
-	CONTENIDO_BLOB FROM NOTA ORDER BY IDNOTA ASC";
-    $stmt = oci_parse($conn, $sql);
-    oci_execute($stmt);
-    while( $fila_nota = oci_fetch_assoc($stmt))  // OCI_BOTH OCI_NUM  OCI_ASSOC OCI_RETURN_NULLS   OCI_ASSOC+OCI_RETURN_NULLS  OCI_RETURN_LOBS
-	{
 ?>
+<table width="70%" border="1">
+    <tr>
+        <th>ID Nota</th>
+        <th>Ruta</th>
+        <th>Título</th>
+        <th>Fecha de Creación</th>
+        <th>ID Usuario</th>
+        <th>ID Categoría</th>
+        <th>Contenido Ruta</th>
+		<th>Contenido Blob</th>
+    </tr>
+    <?php
+    $sql_nota = "SELECT IDNOTA, CONTENIDO, TITULO, FECHACREACION, IDUSUARIO, IDCATEGORIA, CONTENIDO_BLOB, TIPOARCHIVO FROM NOTA ORDER BY IDNOTA ASC";
+    $resultado_nota = oci_parse($conn, $sql_nota);
+    oci_execute($resultado_nota);
+    while ($fila_nota = oci_fetch_assoc($resultado_nota)) {
+        ?>
 
-	<tr  id="target">
-	
-    	<td><?php echo $fila_nota['IDNOTA']; ?></td>	
-        <td><?php echo $fila_nota["TITULO"]; ?></td>
-        <td><?php echo $fila_nota["FECHACREACION"]; ?></td>
-        <td><?php echo $fila_nota["IDUSUARIO"]; ?></td>
-        <td><?php echo $fila_nota["IDCATEGORIA"]; ?></td>
-		<td><?php echo $fila_nota["CONTENIDO"]; ?></td>
-        <!--<td><?php echo $fila_nota["CONTENIDO_BLOB"]; ?></td>-->
-		
+        <tr>
+            <td><?php echo $fila_nota['IDNOTA']; ?></td>
+            <td><?php echo $fila_nota['CONTENIDO']; ?></td>
+            <td><?php echo $fila_nota['TITULO']; ?></td>
+            <td><?php echo $fila_nota['FECHACREACION']; ?></td>
+            <td><?php echo $fila_nota['IDUSUARIO']; ?></td>
+            <td><?php echo $fila_nota['IDCATEGORIA']; ?></td>
+            <td>
+                <?php
+                $rutaArchivo = $fila_nota['CONTENIDO'];
+                $contenidoBlob = $fila_nota['CONTENIDO_BLOB']->load();
+                $tipoArchivo = $fila_nota['TIPOARCHIVO'];
 
-		
-		<td WIDTH="401" 
-	    HEIGHT="249" id="targeta"> 
-		
-		<?php	
-		$archivos = $fila_nota["CONTENIDO"]; 
-		$trozos = explode(".", $archivos); 
-		$extension = end($trozos); 
-	
-		if( $extension == "avi" || $extension == "mp4"  ) {
-		?>
-		<video width="401" height="249" controls>
-			<source src="notas/<?php echo $fila_nota["CONTENIDO"];?>"  type="video/mp4" /> 
-		</video>
-			
-		<?php
-			} 
-			if( $extension == "mp3")
-				{ ?>
-				<audio controls>
-					<source src="notas/<?php echo $fila_nota["CONTENIDO"];?>" type="audio/mpeg" />
-				</audio>
-					 
-		<?php	
-		}
-		?>
-		<div style="text-align:justify">
-			<?php	
-				if( $extension == "txt")
-				{
-					 $ar=fopen("notas/$archivos","r") or
-				die("No se pudo abrir el archivo");
-			  while (!feof($ar))
-			  {
-				$linea=fgets($ar);
-				$lineasalto=nl2br($linea);
-				echo $lineasalto;
-			  }
-			  fclose($ar);
-}
-			?>
-			<?php	
-		if( $extension == "jpg" || $extension == "png" )
-				{
-		?>
-		<div align="center">
-			<img src="notas/<?php echo $fila_nota["CONTENIDO"];?>" alt="Imagen no disponible"> </div>
-			<?php	
-		}
-		?>
-		</div> 
-		
-	
-		<td WIDTH="401" 
-	    HEIGHT="249" id="targeta">
-		
-		<?php 
-		
-		$archivo = $fila_nota["CONTENIDO_BLOB"];		
-		$tipoextension = substr($tipoarchivo, 0, 5); 	
-		
-		if (strtoupper($tipoextension) == "IMAGE")
-	    {
-			echo '<center><img width="401" height="249" src="data:'.trim($tipoarchivo).';base64,'.base64_encode($archivo->load()) .'" /></center>'; 
-		}
-		else if (strtoupper($tipoextension) == "VIDEO")
-	    {			
-			echo '<div content="Content_Type:'.trim($tipoarchivo).'"><center>';
-			echo '<video width="401" height="249" controls="controls">';
-			echo '<source src="data:'.trim($tipoarchivo).';base64,'.base64_encode($archivo->load()).'" type="'.trim($tipoarchivo).'"/>';
-			echo '</video>';
-			echo '</center></div>';
-		} 
-		else if (strtoupper($tipoextension) == "AUDIO")
-	    {			
-			echo '<div content="Content_Type:'.trim($tipoarchivo).'"><center>';
-			echo '<audio width="401" height="85" controls="controls">';
-			echo '<source src="data:'.trim($tipoarchivo).';base64,'.base64_encode($archivo->load()).'" type="'.trim($tipoarchivo).'"/>';
-			echo '</audio>';
-			echo '</center></div>';
-		} 
-		
-		else if (strtoupper($tipoextension) == "TEXT/")
-	    {			
-			echo '<div content="Content_Type:'.trim($tipoarchivo).'"><center>';
-			echo $archivo->load();
-			echo '</center></div>';
-		} 		
-				
-		?>
-		
+                if (file_exists($rutaArchivo)) {
+                    // Determinar el tipo de archivo basado en la extensión
+                    $tipoArchivoRuta = mime_content_type($rutaArchivo);
 
-		
-		</td>
-		
-		
-    </tr>	
-<?php
+                    if (strpos($tipoArchivoRuta, 'image') === 0) {
+                        // Mostrar imagen desde la ruta
+                        echo '<img src="' . $rutaArchivo . '" alt="Imagen">';
+                    } elseif (strpos($tipoArchivoRuta, 'text') === 0) {
+                        // Mostrar archivo de texto desde la ruta
+                        $contenidoTexto = file_get_contents($rutaArchivo);
+                        echo '<pre>' . $contenidoTexto . '</pre>';
+                    } elseif (strpos($tipoArchivoRuta, 'audio') === 0) {
+                        // Mostrar audio desde la ruta
+                        echo '<audio controls><source src="' . $rutaArchivo . '"></audio>';
+                    } elseif (strpos($tipoArchivoRuta, 'video') === 0) {
+                        // Mostrar video desde la ruta
+                        echo '<video controls><source src="' . $rutaArchivo . '"></video>';
+                    } else {
+                        // Tipo de archivo desconocido
+                        echo 'Tipo de archivo no compatible';
+                    }
+                } elseif (!empty($contenidoBlob)) {
+                    echo 'El archivo no existe';
+                }
+                ?>
+            </td>
+			<td>
+                <?php
+                $contenidoBlob = $fila_nota['CONTENIDO_BLOB']->load();
+                $tipoArchivo = $fila_nota['TIPOARCHIVO'];
+
+                if (strpos($tipoArchivo, 'image') === 0) {
+                    // Mostrar imagen
+                    echo '<img src="data:' . $tipoArchivo . ';base64,' . base64_encode($contenidoBlob) . '" alt="Imagen">';
+                } elseif (strpos($tipoArchivo, 'text') === 0) {
+                    // Mostrar archivo de texto
+                    echo '<pre>' . $contenidoBlob . '</pre>';
+                } elseif (strpos($tipoArchivo, 'audio') === 0) {
+                    // Mostrar audio
+                    echo '<audio controls><source src="data:' . $tipoArchivo . ';base64,' . base64_encode($contenidoBlob) . '"></audio>';
+                } elseif (strpos($tipoArchivo, 'video') === 0) {
+                    // Mostrar video
+                    echo '<video controls><source src="data:' . $tipoArchivo . ';base64,' . base64_encode($contenidoBlob) . '"></video>';
+                } else {
+                    // Tipo de archivo desconocido
+                    echo 'Tipo de archivo no compatible';
+                }
+                ?>
+            </td>
+
+
+
+        </tr>
+
+    <?php
+    }
+	if (!oci_error()) {
+		echo "<center><a href='index.html'>Regresar</a></center>";
+	} else {
+		echo "<center>Error</center>";
 	}
-?>
+    ?>
+	
 </table>
+
 </body>
 </html>
-

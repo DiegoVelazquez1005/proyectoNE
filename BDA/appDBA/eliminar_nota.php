@@ -24,13 +24,10 @@ $stmt = oci_parse($conn, $sql);
 oci_execute($stmt);
 
 
-if(!oci_error())
-{
-    echo "<center>Registro Exitoso<br>  <a href='index.html'>Ver Peliculas</a></center>";	
-}
-else
-{
-    echo "<center>Error al Registrar</center>";	
+if (!oci_error()) {
+    echo "<center>Borrado Exitoso<br>  <a href='index.html'>Regresar</a></center>";
+} else {
+    echo "<center>Error</center>";
 }
 
 ?>
