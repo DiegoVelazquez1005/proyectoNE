@@ -1,5 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head></head>
+<link rel="stylesheet" href="estilos.css">
 <body>
 
 <?php

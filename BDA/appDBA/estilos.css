@@ -1,0 +1,23 @@
+body {
+    background-color: #ffecb3; /* Amarillo pastel */
+    font-family: "Times New Roman", serif;
+  }
+  
+  h1, h2 {
+    text-align: center;
+    font-weight: bold;
+    background-color: #ffd699; /* Franja de color naranja pastel */
+    padding: 10px;
+    margin-top: 0;
+  }
+  
+  .formulario {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff7db; /* Fondo amarillo pastel */
+    border: 2px solid #ffb74d; /* Borde naranja claro */
+    width: 50%; /* Ocupar la mitad del ancho de la página */
+    margin-left: auto; /* Centrar horizontalmente */
+    margin-right: auto; /* Centrar horizontalmente */
+  }
+  

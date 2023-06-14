@@ -2,114 +2,111 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Pruebas CRUD para la tabla Notas</title>
+    <title>KEEPNOTES</title>
+    <link rel="stylesheet" href="estilos.css">
   </head>
   <body>
     <h1>KEEPNOTES</h1>
 
     <!-- Formulario para crear una nueva nota -->
-    <h2>Crear Nota</h2>
-    <form action="crear_nota.php" method="POST" enctype="multipart/form-data">
-      <label for="titulo">Título:</label>
-      <input type="text" id="titulo" name="titulo" required /><br /><br />
+    <div class="formulario">
+      <h2>Crear Nota</h2>
+      <form action="crear_nota.php" method="POST" enctype="multipart/form-data">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required /><br /><br />
 
-      <label for="usuario_id">ID de usuario:</label>
-      <input
-        type="number"
-        id="usuario_id"
-        name="usuario_id"
-        required
-      /><br /><br />
+        <label for="usuario_id">ID de usuario:</label>
+        <input
+          type="number"
+          id="usuario_id"
+          name="usuario_id"
+          required
+        /><br /><br />
 
-      <label for="contenido">Contenido (Archivo):</label>
-      <input type="file" id="contenido" name="contenido" required /><br /><br />
+        <label for="contenido">Contenido (Archivo):</label>
+        <input type="file" id="contenido" name="contenido" required /><br /><br />
 
-      <label for="contenido">Contenido (Archivo):</label>
-      <input type="text" id="contenido" name="contenido" required /><br /><br />
+        <label for="contenido">Contenido (Archivo):</label>
+        <input type="text" id="contenido" name="contenido" required /><br /><br />
 
-      <label for="fecha_creacion">Fecha de Creación:</label>
-      <input
-        type="date"
-        id="fecha_creacion"
-        name="fecha_creacion"
-        required
-      /><br /><br />
+        <label for="fecha_creacion">Fecha de Creación:</label>
+        <input
+          type="date"
+          id="fecha_creacion"
+          name="fecha_creacion"
+          required
+        /><br /><br />
 
-      <label for="categoria_id">ID de Categoría:</label>
-      <input
-        type="number"
-        id="categoria_id"
-        name="categoria_id"
-        required
-      /><br /><br />
+        <label for="categoria_id">ID de Categoría:</label>
+        <input
+          type="number"
+          id="categoria_id"
+          name="categoria_id"
+          required
+        /><br /><br />
 
-      <input type="submit" value="Crear" />
-    </form>
+        <input type="submit" value="Crear" />
+      </form>
+    </div>
 
     <!-- Formulario para actualizar una nota existente -->
-    <h2>Actualizar Nota</h2>
-    <form
-      action="actualizar_nota.php"
-      method="POST"
-      enctype="multipart/form-data"
-    >
-      <label for="nota_id">ID de la nota:</label>
-      <input type="number" id="nota_id" name="nota_id" required /><br /><br />
+    <div class="formulario">
+      <h2>Actualizar Nota</h2>
+      <form
+        action="actualizar_nota.php"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <label for="nota_id">ID de la nota:</label>
+        <input type="number" id="nota_id" name="nota_id" required /><br /><br />
 
-      <label for="nuevo_titulo">Nuevo Título:</label>
-      <input
-        type="text"
-        id="nuevo_titulo"
-        name="nuevo_titulo"
-        required
-      /><br /><br />
+        <label for="nuevo_titulo">Nuevo Título:</label>
+        <input
+          type="text"
+          id="nuevo_titulo"
+          name="nuevo_titulo"
+          required
+        /><br /><br />
 
-      <label for="nuevo_contenido">Nueva Ruta Contenido (Archivo):</label>
-      <input
-        type="text"
-        id="nuevo_contenido"
-        name="nuevo_contenido"
-      /><br /><br />
+        <label for="nuevo_contenido">Nueva Ruta Contenido (Archivo):</label>
+        <input
+          type="text"
+          id="nuevo_contenido"
+          name="nuevo_contenido"
+        /><br /><br />
 
-      <label for="nuevo_contenido">Nuevo Contenido (Archivo):</label>
-      <input
-        type="file"
-        id="nuevo_contenido"
-        name="nuevo_contenido"
-      /><br /><br />
+        <label for="nuevo_contenido">Nuevo Contenido (Archivo):</label>
+        <input
+          type="file"
+          id="nuevo_contenido"
+          name="nuevo_contenido"
+        /><br /><br />
 
-      <input type="submit" value="Actualizar" />
-    </form>
+        <input type="submit" value="Actualizar" />
+      </form>
+    </div>
 
     <!-- Formulario para eliminar una nota -->
-    <h2>Eliminar Nota</h2>
-    <form action="eliminar_nota.php" method="POST">
-      <label for="nota_id_eliminar">ID de la nota a eliminar:</label>
-      <input
-        type="text"
-        id="nota_id_eliminar"
-        name="nota_id_eliminar"
-        required
-      /><br /><br />
+    <div class="formulario">
+      <h2>Eliminar Nota</h2>
+      <form action="eliminar_nota.php" method="POST">
+        <label for="nota_id_eliminar">ID de la nota a eliminar:</label>
+        <input
+          type="text"
+          id="nota_id_eliminar"
+          name="nota_id_eliminar"
+          required
+        /><br /><br />
 
-      <input type="submit" value="Eliminar" />
-    </form>
+        <input type="submit" value="Eliminar" />
+      </form>
+    </div>
 
+  <div class="formulario">
+    <!-- Formulario para leer una nota -->
     <h2>Leer Nota</h2>
-    <!-- Formulario para leer una nota 
-    
-    <form action="leer_nota.php" method="POST">
-      <label for="nota_id_leer">ID de la nota a leer:</label>
-      <input
-        type="text"
-        id="nota_id_leer"
-        name="nota_id_leer"
-        required
-      /><br /><br />
-    
-      <input type="submit" value="Leer" />
-    </form>
-  -->
+
     <a href="leer_nota.php"><button>Abrir</button></a>
+  </div>
   </body>
 </html>

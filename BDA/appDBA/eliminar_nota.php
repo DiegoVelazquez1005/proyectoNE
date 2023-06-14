@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="estilos.css">
 <?php
 $host = "localhost";
 $port = "1521";
